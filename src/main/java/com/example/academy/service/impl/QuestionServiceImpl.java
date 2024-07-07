@@ -31,7 +31,7 @@ public class QuestionServiceImpl implements QuestionService {
              answerResponse.setQuestionType (question.getQuestionType ());
 
 
-             List<Answer> answers = answerRepository.findByQuestionByRandom (question.getId ());
+             List<Answer> answers = answerRepository.findByQuestionByRandom (Long.valueOf (question.getId ()));
              List<AnswerListResponseDto> answerListResponses= new ArrayList<> ();
              for (Answer answer: answers){
                  AnswerListResponseDto answerListResponse= AnswerListResponseDto.builder ()

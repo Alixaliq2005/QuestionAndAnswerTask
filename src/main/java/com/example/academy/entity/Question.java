@@ -7,7 +7,8 @@ import lombok.experimental.FieldDefaults;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,7 +17,7 @@ import java.util.List;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    String id;
 
     @Column(name = "description",nullable = false)
     String description;

@@ -9,6 +9,6 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
 public class AnswerListResponseDto {
-    Long id;
+    String id;
     String description;
 }

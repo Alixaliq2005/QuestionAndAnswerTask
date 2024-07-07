@@ -7,7 +7,8 @@ import lombok.experimental.FieldDefaults;
 import java.util.Optional;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +18,7 @@ public class Answer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    String id;
 
     String description;
 

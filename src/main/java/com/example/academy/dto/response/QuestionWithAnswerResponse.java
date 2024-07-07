@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class QuestionWithAnswerResponse {
 
-    Long id;
+    String id;
 
     String description;
 

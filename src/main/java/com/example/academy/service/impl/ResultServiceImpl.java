@@ -37,12 +37,15 @@ public class ResultServiceImpl implements ResultService {
                     .count () * correctChoicePoints;
         }
         else {
-            return correctAnswersId.equals (usersAnswers) ? 1:0;
+            System.out.println (usersAnswers.get (0));
+            System.out.println (correctAnswersId.get (0).getId ());
+            System.out.println (correctAnswersId.get (0).getId ().equals (usersAnswers.get (0)));
+            return correctAnswersId.get (0).getId ().equals (usersAnswers.get (0)) ? 1:0;
         }
     }
 
     private List<Answer> getCorrectAnswersId(ResultRequestDto resultRequestDto) {
-        Long questionId=resultRequestDto.getQuestionResultRequestDto().getId ();
+        String questionId=resultRequestDto.getQuestionResultRequestDto().getId ();
         return answerRepository.findCorrectAnswersByQuestionId(questionId);
     }
 

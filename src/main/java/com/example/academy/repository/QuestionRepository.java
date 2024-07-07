@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface QuestionRepository extends JpaRepository<Question, Long>, JpaSpecificationExecutor<Question> {
+public interface QuestionRepository extends JpaRepository<Question, String>, JpaSpecificationExecutor<Question> {
 
 
     @Query("""

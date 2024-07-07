@@ -20,7 +20,7 @@ public class AnswerServiceImpl implements AnswerService {
                 .description(answerCreateRequestDto.getDescription())
                 .isCorrect(answerCreateRequestDto.getIsCorrect())
                 .build();
-        answer.setQuestion(questionRepository.findById(answerCreateRequestDto.getQuestionId()).orElseThrow ());
+        answer.setQuestion(questionRepository.findById(String.valueOf (answerCreateRequestDto.getQuestionId())).orElseThrow ());
         return answerRepository.save(answer);
     }
 }

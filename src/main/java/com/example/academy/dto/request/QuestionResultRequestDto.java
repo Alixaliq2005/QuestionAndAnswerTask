@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class QuestionResultRequestDto {
-    Long id;
+    String id;
     String description;
     QuestionType questionType;
 

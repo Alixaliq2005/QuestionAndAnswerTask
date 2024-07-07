@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface AnswerRepository extends JpaRepository<Answer, Long>,
+public interface AnswerRepository extends JpaRepository<Answer, String>,
         JpaSpecificationExecutor<Answer> {
     @Query("""
             select a from  Answer a  where a.id=:id order by RAND()
@@ -17,5 +17,5 @@ public interface AnswerRepository extends JpaRepository<Answer, Long>,
     @Query("""
             SELECT a FROM Answer a WHERE a.question.id = :questionId AND a.isCorrect = true
             """)
-    List<Answer> findCorrectAnswersByQuestionId(Long questionId);
+    List<Answer> findCorrectAnswersByQuestionId(String questionId);
 }
